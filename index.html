@@ -3,10 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pages Örneği</title>
+    <title>GitHub Anasayfası</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+
+        .tabs {
+            background-color: #333;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .tab {
+            color: white;
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #555;
+        }
+
+        #content {
+            margin: 20px 0;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Merhaba, GitHub Pages!</h1>
-    <p>Bu, GitHub üzerinden oluşturduğum basit bir web sayfasıdır.</p>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab" onclick="showPage('page1')">Sayfa1</button>
+            <button class="tab" onclick="showPage('page2')">Sayfa2</button>
+            <button class="tab" onclick="showPage('page3')">Sayfa3</button>
+        </div>
+        <div id="content">
+            <h1>HOŞGELDİNİZ</h1>
+        </div>
+        <footer>
+            <p>Okuduğunuz için teşekkürler.</p>
+        </footer>
+    </div>
+    <script>
+        function showPage(page) {
+            const content = document.getElementById('content');
+            switch (page) {
+                case 'page1':
+                    content.innerHTML = '<h1>HOŞGELDİNİZ - Sayfa 1</h1>';
+                    break;
+                case 'page2':
+                    content.innerHTML = '<h1>HOŞGELDİNİZ - Sayfa 2</h1>';
+                    break;
+                case 'page3':
+                    content.innerHTML = '<h1>HOŞGELDİNİZ - Sayfa 3</h1>';
+                    break;
+                default:
+                    content.innerHTML = '<h1>HOŞGELDİNİZ</h1>';
+            }
+        }
+    </script>
 </body>
 </html>
